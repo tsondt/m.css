@@ -3,3 +3,5 @@ htmlcov/
 coverage/
 .coverage
 *.kdev4
+.DS_Store
+/.vscode
