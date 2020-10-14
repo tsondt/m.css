@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <title>{% block title %}{{ SITENAME|e }}{% endblock title %}</title>
-  {% for href in M_CSS_FILES %}
-  <link rel="stylesheet" href="{{ href|format_siteurl|e }}" />
+  {% for css_file in M_CSS_FILES %}
+  <link rel="stylesheet" href="{{ css_file[0]|format_siteurl|e }}" integrity="{{ css_file[1] }}" />
   {% endfor %}
+  {% if M_DARK_THEME %}
+    {% assets filters="scss,cssmin", output="main.min.css", "main-dark" %}
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}" />
+    {% endassets %}
+  {% else %}
+    {% assets filters="scss,cssmin", output="main.min.css", "main-light" %}
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}" />
+    {% endassets %}
+  {% endif %}
   {% block head_links %}
   {% endblock head_links %}
   {% if FEED_ALL_ATOM_URL %}

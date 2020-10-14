@@ -22,9 +22,6 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-@import url('m-theme-dark.css');
-@import url('m-grid.css');
-@import url('m-components.css');
-@import url('m-layout.css');
-@import url('pygments-dark.css');
-@import url('pygments-console.css');
+@import 'm-theme-dark.scss';
+@import 'm-grid.scss', 'm-components.scss', 'm-layout.scss';
+@import 'pygments-light.scss', 'pygments-console.scss';

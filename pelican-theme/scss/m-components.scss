@@ -1117,7 +1117,10 @@ div.m-button.m-dim a:hover, div.m-button.m-dim a:focus, div.m-button.m-dim a:act
 }
 
 /* Colored note, table coloring */
-.m-note.m-default { background-color: var(--default-filled-background-color); }
+.m-note.m-default {
+  background-color: var(--default-filled-background-color);
+  opacity: 0.9;
+}
 .m-note.m-default,
 table.m-table tr.m-default td, table.m-table td.m-default,
 table.m-table tr.m-default th, table.m-table th.m-default {
