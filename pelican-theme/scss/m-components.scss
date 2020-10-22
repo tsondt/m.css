@@ -99,6 +99,7 @@ abbr {
 }
 a {
   color: var(--link-color);
+  text-decoration: none;
 }
 a.m-flat {
   text-decoration: none;
@@ -188,6 +189,11 @@ ul.m-unstyled, ol.m-unstyled {
   list-style-type: none;
   padding-left: 0;
 }
+
+ul.m-unstyled > li, ol.m-unstyled > li {
+  margin-bottom: 5px;
+}
+
 ul[class*='m-block-'], ol[class*='m-block-'] {
   padding-left: 0;
 }
